@@ -27,7 +27,8 @@ def load_checkpoint(ckpt_path):
     if ckpt_path:
         logger.info('Loading checkpoint from %s' % ckpt_path)
         checkpoint = torch.load(ckpt_path,
-                                map_location=lambda storage, loc: storage)
+                                map_location=lambda storage, loc: storage,
+                                weights_only=False)
     return checkpoint
 
 
